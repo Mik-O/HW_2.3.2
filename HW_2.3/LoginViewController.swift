@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
     
     //MARK: - IBAction
     @IBAction func loginPressed() {
-        if userNameTextField.text !== user || passwordTextField.text !== password {
+        if userNameTextField.text != user || passwordTextField.text != password {
             showAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login or password",
@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
                   message: "You password is \(password) 😉")
     }
     
-    @IBAction override func unwindSegue(segue: UIStoryboardSegue) {
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
         userNameTextField.text = nil
         passwordTextField.text = nil
     }
@@ -60,6 +60,7 @@ extension LoginViewController {
     
     alert.addAction(okAction)
     present(alert, animated: true)
+}
 }
 
     //MARK - Work with keyboard
@@ -78,4 +79,5 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
 }
+
 
